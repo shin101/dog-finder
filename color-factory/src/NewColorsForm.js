@@ -1,24 +1,28 @@
 import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
+import { useNavigate } from "react-router-dom";
 
-function NewColorsForm({ color }){
-  // const initialState = { width: 100, height: 100, bgColor: 'black' };
-  // const [box, setBox] = useState(initialState);
+function NewColorsForm({ addColor }){
+  const [form, setForm] = useState("");
+  const navigate = useNavigate();
   
-  // const handleChange = e => {
-  //   const name = e.target.name;
-  //   setBox(box => ({ ...box, [name]: name === 'bgColor' ? e.target.value : +e.target.value }));
-  // };
+  const handleChange = e => {
+    setForm(e.target.value);
+  };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   addBox({ ...box, id:uuid() });
-  //   setBox(initialState);
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addColor(form);
+
+    navigate("/colors");
+  };
 
   return (
     <div>
-      <form> 
+      <form onSubmit = {handleSubmit}> 
+        <input
+        placeholder="color name"
+        onChange={handleChange}/>
+
         <button>Add this color</button>
       </form>
     </div>

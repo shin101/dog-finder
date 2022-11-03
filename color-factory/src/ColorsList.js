@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ColorsList({ colors }) {
-  const colorLinks = colors.map(color => (
-    <Link to={`/colors/${color}}`} key={color}>{color}</Link>
+  const colorLinks = colors.map((color, idx) => (
+    <p><Link to={`/colors/${color}}`} key={idx}>{color}</Link></p>
   ))
 
   return (
@@ -12,9 +12,6 @@ function ColorsList({ colors }) {
       <Link to="/colors/new">Add a color</Link>
 
     <p>Please select a color</p>{colorLinks}
-
-
-    {/* {colors: ['pink', 'purple', 'yellow']}; */}
 
     </div>
   )
