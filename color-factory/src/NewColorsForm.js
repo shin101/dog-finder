@@ -11,10 +11,14 @@ function NewColorsForm({ addColor }){
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addColor(form);
-
+    if (CSS.supports("color", form)) {
+      addColor(form);
+    } else {
+      alert("You have input an invalid color");
+    }
     navigate("/colors");
   };
+
 
   return (
     <div>
