@@ -4,11 +4,9 @@ import RoutesMod from "./RoutesMod";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <RoutesMod />
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <RoutesMod />
+    </BrowserRouter>
   );
 }
 

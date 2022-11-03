@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
 
+
 function Color({ colors }) {
   const { color } = useParams();
   const navigate = useNavigate();
@@ -13,10 +14,11 @@ function Color({ colors }) {
  console.log({color});
 
   return (
-    <div>
+    <div style={{ backgroundColor : color , height: '800px'}} >
       <h2>This is {color}</h2>
     
     <Link to="/colors">Go back home</Link>
+ 
     </div>
   )
 }

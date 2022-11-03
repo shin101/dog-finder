@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function ColorsList({ colors }) {
   const colorLinks = colors.map((color, idx) => (
-    <p><Link to={`/colors/${color}}`} key={idx}>{color}</Link></p>
+    <p key={idx}><Link to={`/colors/${color}`}> {color} </Link></p>
   ))
 
   return (
